@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "menu_id": "101",
+        "parent_id": null,
+        "name": "menu_1",
+        "description": null,
+        "created_at": null,
+        "updated_at": null,
+        "children": [
+            {
+                "id": 4,
+                "menu_id": "104",
+                "parent_id": 1,
+                "name": "menu_11",
+                "description": null,
+                "created_at": null,
+                "updated_at": null,
+                "children": []
+            },
+            {
+                "id": 5,
+                "menu_id": "105",
+                "parent_id": 1,
+                "name": "menu_12",
+                "description": null,
+                "created_at": null,
+                "updated_at": null,
+                "children": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "menu_id": "102",
+        "parent_id": null,
+        "name": "menu_2",
+        "description": null,
+        "created_at": null,
+        "updated_at": null,
+        "children": [
+            {
+                "id": 6,
+                "menu_id": "106",
+                "parent_id": 2,
+                "name": "menu_21",
+                "description": null,
+                "created_at": null,
+                "updated_at": null,
+                "children": []
+            },
+            {
+                "id": 7,
+                "menu_id": "107",
+                "parent_id": 2,
+                "name": "menu_22",
+                "description": null,
+                "created_at": null,
+                "updated_at": null,
+                "children": []
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "menu_id": "103",
+        "parent_id": null,
+        "name": "menu_3",
+        "description": null,
+        "created_at": null,
+        "updated_at": null,
+        "children": [
+            {
+                "id": 8,
+                "menu_id": "108",
+                "parent_id": 3,
+                "name": "menu_31",
+                "description": null,
+                "created_at": null,
+                "updated_at": null,
+                "children": [
+                    {
+                        "id": 10,
+                        "menu_id": "110",
+                        "parent_id": 8,
+                        "name": "menu_80",
+                        "description": null,
+                        "created_at": null,
+                        "updated_at": null,
+                        "children": []
+                    },
+                    {
+                        "id": 11,
+                        "menu_id": "111",
+                        "parent_id": 8,
+                        "name": "menu_81",
+                        "description": null,
+                        "created_at": null,
+                        "updated_at": null,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "menu_id": "109",
+                "parent_id": 3,
+                "name": "menu_32",
+                "description": null,
+                "created_at": null,
+                "updated_at": null,
+                "children": [
+                    {
+                        "id": 12,
+                        "menu_id": "112",
+                        "parent_id": 9,
+                        "name": "menu_90",
+                        "description": null,
+                        "created_at": null,
+                        "updated_at": null,
+                        "children": []
+                    },
+                    {
+                        "id": 13,
+                        "menu_id": "113",
+                        "parent_id": 9,
+                        "name": "menu_91",
+                        "description": null,
+                        "created_at": null,
+                        "updated_at": null,
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]
