@@ -25,4 +25,15 @@ class Menu extends Model
         return $this->hasMany(Menu::class, 'parent_id')
             ->with('children');
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($menu) {
+            $menu->children()->each(function ($child) {
+                $child->delete();
+            });
+        });
+    }
 }

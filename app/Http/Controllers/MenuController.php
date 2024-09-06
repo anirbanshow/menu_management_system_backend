@@ -33,13 +33,9 @@ class MenuController extends Controller
                 'parent_id' => 'nullable|exists:menus,id',
             ]);
 
-            // dd($request->all());
-
             $menu_id = Carbon::now()->millisecondOfDay();
 
             $request['menu_id'] = $menu_id;
-
-            // dd($request->all());
 
             $menu = Menu::create($request->all());
 
@@ -80,6 +76,9 @@ class MenuController extends Controller
         $menu = Menu::findOrFail($id);
         $menu->delete();
 
-        return response()->json(null, 204);
+        return response()->json(
+            ['msg' => 'Menu deleted successfully'],
+            201
+        );
     }
 }
