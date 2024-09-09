@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class MenuController extends Controller
 {
@@ -28,10 +29,14 @@ class MenuController extends Controller
     {
         try {
 
-            $request->validate([
+            $validator = Validator::make($request->all(), [
                 'name' => 'required|string|max:255',
-                'parent_id' => 'nullable|exists:menus,id',
+                'parent_id' => 'nullable|exists:menus,id'
             ]);
+
+            if ($validator->fails()) {
+                return response()->json($validator->errors());
+            }
 
             $menu_id = Carbon::now()->millisecondOfDay();
 
@@ -73,12 +78,16 @@ class MenuController extends Controller
 
     public function destroy($id)
     {
-        $menu = Menu::findOrFail($id);
-        $menu->delete();
+        try {
+            $menu = Menu::findOrFail($id);
+            $menu->delete();
 
-        return response()->json(
-            ['msg' => 'Menu deleted successfully'],
-            201
-        );
+            return response()->json(
+                ['msg' => 'Menu deleted successfully'],
+                201
+            );
+        } catch (\Throwable $th) {
+            return response()->json($th, 500);
+        }
     }
 }
